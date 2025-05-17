@@ -68,8 +68,8 @@ Proyek ini menggunakan **Anime Recommendation Database 2020** yang tersedia seca
 
 Dataset terdiri dari dua bagian utama:
 
-1. **anime.csv** — berisi metadata dari berbagai judul anime seperti genre, jumlah episode, rating, dan jumlah anggota (members) yang menambahkan anime ke daftar mereka.
-2. **rating.csv** — berisi rating yang diberikan oleh pengguna terhadap berbagai judul anime.
+1. **anime.csv** yang berisi metadata dari berbagai judul anime seperti genre, jumlah episode, rating, dan jumlah anggota (members) yang menambahkan anime ke daftar mereka.
+2. **rating.csv** yang berisi rating yang diberikan oleh pengguna terhadap berbagai judul anime.
 
 Secara umum:
 
