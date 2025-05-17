@@ -17,34 +17,52 @@ Zhang, S., Yao, L., Sun, A., & Tay, Y. (2021). Deep Learning Based Recommender S
 
 Adomavicius, G., & Tuzhilin, A. (2020). Context-Aware Recommender Systems. AI Magazine, 40(4), 67–80. https://doi.org/10.1609/aimag.v40i4.5319
 
-## Business Understanding
+## 📊 Business Understanding
 
-Pada bagian ini, Anda perlu menjelaskan proses klarifikasi masalah.
+### ✅ Problem Statements
 
-Bagian laporan ini mencakup:
+1. Bagaimana pengguna dapat menemukan anime yang sesuai dengan preferensi pribadi mereka di tengah ribuan pilihan judul yang tersedia di berbagai platform?
 
-### Problem Statements
+2. Mengapa sistem rekomendasi umum atau trending saat ini kurang efektif untuk pengguna dengan preferensi genre, studio, atau cerita tertentu?
 
-Menjelaskan pernyataan masalah:
-- Pernyataan Masalah 1
-- Pernyataan Masalah 2
-- Pernyataan Masalah n
+3. Bagaimana cara menciptakan sistem rekomendasi yang tidak hanya berbasis konten, tetapi juga mampu mempertimbangkan perilaku pengguna lain untuk menghasilkan saran yang lebih personal dan dinamis?
 
-### Goals
+### 🎯 Goals
 
-Menjelaskan tujuan proyek yang menjawab pernyataan masalah:
-- Jawaban pernyataan masalah 1
-- Jawaban pernyataan masalah 2
-- Jawaban pernyataan masalah n
+1. Membangun sistem rekomendasi anime berbasis Content-based Filtering yang mempertimbangkan genre, sinopsis, dan studio untuk membantu pengguna menemukan anime yang relevan dengan preferensi pribadi mereka.
 
-Semua poin di atas harus diuraikan dengan jelas. Anda bebas menuliskan berapa pernyataan masalah dan juga goals yang diinginkan.
+2. Meningkatkan personalisasi rekomendasi dengan pendekatan Collaborative Filtering yang memanfaatkan data interaksi dan rating pengguna lain yang memiliki pola kesukaan serupa.
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Menambahkan bagian “Solution Approach” yang menguraikan cara untuk meraih goals. Bagian ini dibuat dengan ketentuan sebagai berikut: 
+3. Mengembangkan sistem rekomendasi yang adaptif dengan menggabungkan pendekatan Content-based dan Collaborative Filtering, sehingga mampu memberikan saran yang lebih akurat dan sesuai dengan minat pengguna.
 
-    ### Solution statements
-    - Mengajukan 2 atau lebih solution approach (algoritma atau pendekatan sistem rekomendasi).
+### 🛠️ Solution Approach
 
+Untuk mencapai tujuan di atas, sistem akan dikembangkan dengan mengimplementasikan lebih dari satu pendekatan rekomendasi yang saling melengkapi:
+
+#### ✅ Solution Statements:
+
+Pengguna membutuhkan sistem rekomendasi yang mampu menyajikan saran anime yang **relevan secara kontekstual** dan **personal secara sosial**, dengan mempertimbangkan baik karakteristik konten maupun perilaku pengguna lain.
+
+#### 🔍 Pendekatan 1: **Content-Based Filtering**
+
+* **Deskripsi**: Sistem akan merekomendasikan anime berdasarkan kemiripan fitur seperti *genre*, *sinopsis*, dan *studio produksi* dari anime yang disukai pengguna sebelumnya.
+* **Teknik yang digunakan**:
+
+  * **TF-IDF Vectorization** untuk merepresentasikan teks sinopsis/genre dalam bentuk numerik.
+  * **Cosine Similarity** untuk mengukur tingkat kemiripan antar anime berdasarkan fitur kontennya.
+* **Kelebihan**: Tidak membutuhkan data pengguna lain, cocok untuk pengguna baru yang belum banyak memberi rating.
+
+#### 🔍 Pendekatan 2: **Collaborative Filtering**
+
+* **Deskripsi**: Sistem akan memanfaatkan pola rating atau preferensi pengguna lain untuk memberikan rekomendasi anime yang disukai oleh pengguna yang memiliki selera serupa.
+* **Teknik yang digunakan**:
+
+  * **User-Based Collaborative Filtering** dengan *k-Nearest Neighbors* untuk mencari pengguna yang serupa.
+  * **Item-Based Collaborative Filtering** sebagai alternatif, menggunakan kemiripan antar anime berdasarkan rating kolektif.
+  * Jika memungkinkan, **Matrix Factorization (SVD)** dapat digunakan untuk memperbaiki akurasi prediksi.
+* **Kelebihan**: Dapat memberikan rekomendasi yang lebih dinamis dan adaptif terhadap tren pengguna.
+
+############################################BATAS AM KERJOAKAN ########################################################
 ## Data Understanding
 Paragraf awal bagian ini menjelaskan informasi mengenai jumlah data, kondisi data, dan informasi mengenai data yang digunakan. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
 
