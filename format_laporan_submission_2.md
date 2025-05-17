@@ -1,14 +1,21 @@
-# Laporan Proyek Machine Learning - Nama Anda
+# Laporan Proyek Machine Learning - Imelda Cyntia
 
-## Project Overview
+## 📌Project Overview
 
-Pada bagian ini, Kamu perlu menuliskan latar belakang yang relevan dengan proyek yang diangkat.
+Di era digital saat ini, sistem rekomendasi memiliki peran penting dalam membantu pengguna memilah informasi dari banjir konten yang tersedia. Dalam industri hiburan Jepang, khususnya anime, ribuan judul tersedia di berbagai platform digital seperti MyAnimeList, Crunchyroll, dan Netflix. Jumlah konten yang masif ini sering kali membuat pengguna kewalahan dalam memilih anime yang sesuai preferensi, sehingga dibutuhkan sistem cerdas yang dapat memberikan rekomendasi personal.
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Jelaskan mengapa dan bagaimana masalah tersebut harus diselesaikan
-- Menyertakan hasil riset terkait atau referensi. Referensi yang diberikan harus berasal dari sumber yang kredibel dan author yang jelas.
-- Format Referensi dapat mengacu pada penulisan sitasi [IEEE](https://journals.ieeeauthorcenter.ieee.org/wp-content/uploads/sites/7/IEEE_Reference_Guide.pdf), [APA](https://www.mendeley.com/guides/apa-citation-guide/) atau secara umum seperti [di sini](https://penerbitdeepublish.com/menulis-buku-membuat-sitasi-dengan-mudah/)
-- Sumber yang bisa digunakan [Scholar](https://scholar.google.com/)
+Permintaan global terhadap anime terus meningkat. Menurut laporan Content Japan oleh Japan External Trade Organization (JETRO), nilai ekspor konten Jepang (termasuk anime) melalui layanan digital meningkat tajam, mencapai rekor baru pasca-2020 akibat percepatan digitalisasi selama pandemi COVID-19 (JETRO, 2021). Tren ini menunjukkan betapa pentingnya optimalisasi pengalaman pengguna dalam mengakses konten melalui sistem rekomendasi yang relevan.
+
+Studi terbaru dalam bidang sistem rekomendasi juga menunjukkan bahwa pendekatan seperti Content-based Filtering dan Collaborative Filtering secara signifikan dapat meningkatkan kepuasan dan keterlibatan pengguna. Dalam kajian oleh Zhang et al. (2021), sistem rekomendasi yang menggabungkan informasi konten dengan perilaku pengguna terbukti memberikan performa lebih baik dalam domain hiburan seperti musik dan video-on-demand, termasuk anime.
+
+Berdasarkan hal tersebut, proyek ini bertujuan membangun sistem rekomendasi anime menggunakan pendekatan Content-based Filtering dan Collaborative Filtering. Sistem ini memanfaatkan dataset publik dari Kaggle untuk menganalisis informasi genre, sinopsis, studio, serta rating pengguna. Hasilnya diharapkan dapat membantu pengguna menemukan anime yang relevan dengan minat mereka, serta memberikan insight bagaimana machine learning diterapkan dalam sektor hiburan digital.
+
+## 📚 Daftar Referensi
+JETRO. (2021). Content Japan Report: Export and Market Trends of Japanese Content. Japan External Trade Organization. https://www.jetro.go.jp/en/reports/statistics.html
+
+Zhang, S., Yao, L., Sun, A., & Tay, Y. (2021). Deep Learning Based Recommender System: A Survey and New Perspectives. ACM Computing Surveys (CSUR), 52(1), 1–38. https://doi.org/10.1145/3285029
+
+Adomavicius, G., & Tuzhilin, A. (2020). Context-Aware Recommender Systems. AI Magazine, 40(4), 67–80. https://doi.org/10.1609/aimag.v40i4.5319
 
 ## Business Understanding
 
