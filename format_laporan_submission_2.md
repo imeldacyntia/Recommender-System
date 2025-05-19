@@ -122,6 +122,8 @@ Terdapat outlier seperti episode = "Unknown" atau jumlah episode ekstrem (>1000)
 * Banyak pengguna hanya memberi rating pada sedikit anime, sementara sebagian kecil pengguna sangat aktif (memberi rating ke ratusan judul).
 * Ini berpengaruh pada pendekatan collaborative filtering, di mana pengguna aktif menjadi basis penting dalam menemukan kesamaan minat.
 
+### Deteksi Outliner:
+
 ############################################BATAS AM KERJOAKAN ########################################################
 ## Data Preparation
 Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
