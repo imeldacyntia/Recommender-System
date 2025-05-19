@@ -123,6 +123,13 @@ Terdapat outlier seperti episode = "Unknown" atau jumlah episode ekstrem (>1000)
 * Ini berpengaruh pada pendekatan collaborative filtering, di mana pengguna aktif menjadi basis penting dalam menemukan kesamaan minat.
 
 ### Deteksi Outliner:
+Boxplot menunjukkan adanya outlier pada beberapa fitur:
+
+* Rating Anime: Umumnya berada di 6–8, namun ada outlier di bawah 4 dan di atas 9.
+* Rating Pengguna: Setelah menghapus nilai -1, rating tetap menunjukkan outlier pada nilai ekstrem (1 dan 10).
+* Jumlah Episode: Sebagian besar anime memiliki <100 episode, tapi ada outlier hingga >1000 episode.
+* Jumlah Rating per Pengguna: Mayoritas pengguna memberi sedikit rating, namun ada outlier dengan >3000 rating.
+
 
 ############################################BATAS AM KERJOAKAN ########################################################
 ## Data Preparation
