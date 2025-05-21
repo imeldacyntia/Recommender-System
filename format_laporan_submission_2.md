@@ -29,7 +29,7 @@ Adomavicius, G., & Tuzhilin, A. (2020). Context-Aware Recommender Systems. AI Ma
 
 ### Goals
 
-1. Membangun sistem rekomendasi anime berbasis Content-based Filtering yang mempertimbangkan genre, tipe anime, dan skor rating untuk membantu pengguna menemukan anime yang relevan dengan preferensi pribadi mereka.
+1. Membangun sistem rekomendasi anime berbasis Content-based Filtering yang mempertimbangkan genre, tipe tayangan, dan skor rating untuk membantu pengguna menemukan anime yang relevan dengan preferensi pribadi mereka.
 
 2. Meningkatkan personalisasi rekomendasi dengan pendekatan Collaborative Filtering yang memanfaatkan data interaksi dan rating pengguna lain yang memiliki pola kesukaan serupa.
 
@@ -45,22 +45,21 @@ Pengguna membutuhkan sistem rekomendasi yang mampu menyajikan saran anime yang *
 
 #### Pendekatan 1: **Content-Based Filtering**
 
-* **Deskripsi**: Sistem akan merekomendasikan anime berdasarkan kemiripan fitur seperti genre, jenis tayangan (TV/Movie/OVA), dan rating, yang mencerminkan karakteristik konten dari anime yang disukai pengguna.
+* **Deskripsi**: Sistem akan merekomendasikan anime berdasarkan kemiripan karakteristik konten, seperti genre, jenis tayangan (TV, Movie, OVA), dan skor rating. Pendekatan ini memungkinkan pengguna mendapatkan rekomendasi anime yang mirip dengan yang pernah mereka sukai.
 * **Teknik yang digunakan**:
 
+  * Representasi teks pada fitur genre menggunakan teknik TF-IDF Vectorizer.
   * Encoding fitur-fitur konten (seperti genre, tipe, rating) ke bentuk numerik.
-  * Menggunakan Cosine Similarity untuk mengukur tingkat kemiripan antar anime berdasarkan vektor fitur.
+  * Perhitungan kemiripan antar anime menggunakan Cosine Similarity.
   * Rekomendasi diberikan berdasarkan anime yang memiliki kemiripan tertinggi terhadap anime pilihan pengguna.
 
 #### Pendekatan 2: **Collaborative Filtering**
 
-* **Deskripsi**: Sistem akan memanfaatkan pola rating atau preferensi pengguna lain untuk memberikan rekomendasi anime yang disukai oleh pengguna yang memiliki selera serupa.
+* **Deskripsi**: Sistem akan merekomendasikan anime berdasarkan interaksi atau rating dari pengguna lain yang memiliki pola kesukaan serupa. Pendekatan ini membantu menangkap aspek sosial dari preferensi pengguna.
 * **Teknik yang digunakan**:
 
-  * **User-Based Collaborative Filtering** dengan *k-Nearest Neighbors* untuk mencari pengguna yang serupa.
-  * **Item-Based Collaborative Filtering** sebagai alternatif, menggunakan kemiripan antar anime berdasarkan rating kolektif.
-  * Jika memungkinkan, **Matrix Factorization (SVD)** dapat digunakan untuk memperbaiki akurasi prediksi.
-* **Kelebihan**: Dapat memberikan rekomendasi yang lebih dinamis dan adaptif terhadap tren pengguna.
+  * User-Based Collaborative Filtering dengan algoritma k-Nearest Neighbors (kNN) untuk menemukan pengguna yang memiliki preferensi serupa.
+  * Alternatif: Item-Based Collaborative Filtering, yang mengukur kemiripan antar anime berdasarkan rating kolektif dari banyak pengguna.
 
 ## Data Understanding
 Proyek ini menggunakan **Anime Recommendation Database 2020** yang tersedia secara publik melalui Kaggle. Dataset ini dapat diakses melalui tautan berikut:
