@@ -23,13 +23,13 @@ Adomavicius, G., & Tuzhilin, A. (2020). Context-Aware Recommender Systems. AI Ma
 
 1. Bagaimana pengguna dapat menemukan anime yang sesuai dengan preferensi pribadi mereka di tengah ribuan pilihan judul yang tersedia di berbagai platform?
 
-2. Mengapa sistem rekomendasi umum atau trending saat ini kurang efektif untuk pengguna dengan preferensi genre, studio, atau cerita tertentu?
+2. Mengapa sistem rekomendasi umum atau daftar trending saat ini kurang efektif bagi pengguna yang memiliki preferensi khusus terhadap genre, tipe tayangan, atau rating tertentu?
 
-3. Bagaimana cara menciptakan sistem rekomendasi yang tidak hanya berbasis konten, tetapi juga mampu mempertimbangkan perilaku pengguna lain untuk menghasilkan saran yang lebih personal dan dinamis?
+3. Bagaimana cara menciptakan sistem rekomendasi yang tidak hanya mempertimbangkan karakteristik konten anime, tetapi juga perilaku pengguna lain untuk memberikan saran yang lebih personal dan relevan?
 
 ### Goals
 
-1. Membangun sistem rekomendasi anime berbasis Content-based Filtering yang mempertimbangkan genre, sinopsis, dan studio untuk membantu pengguna menemukan anime yang relevan dengan preferensi pribadi mereka.
+1. Membangun sistem rekomendasi anime berbasis Content-based Filtering yang mempertimbangkan genre, tipe anime, dan skor rating untuk membantu pengguna menemukan anime yang relevan dengan preferensi pribadi mereka.
 
 2. Meningkatkan personalisasi rekomendasi dengan pendekatan Collaborative Filtering yang memanfaatkan data interaksi dan rating pengguna lain yang memiliki pola kesukaan serupa.
 
@@ -45,12 +45,12 @@ Pengguna membutuhkan sistem rekomendasi yang mampu menyajikan saran anime yang *
 
 #### Pendekatan 1: **Content-Based Filtering**
 
-* **Deskripsi**: Sistem akan merekomendasikan anime berdasarkan kemiripan fitur seperti *genre*, *sinopsis*, dan *studio produksi* dari anime yang disukai pengguna sebelumnya.
+* **Deskripsi**: Sistem akan merekomendasikan anime berdasarkan kemiripan fitur seperti genre, jenis tayangan (TV/Movie/OVA), dan rating, yang mencerminkan karakteristik konten dari anime yang disukai pengguna.
 * **Teknik yang digunakan**:
 
-  * **TF-IDF Vectorization** untuk merepresentasikan teks sinopsis/genre dalam bentuk numerik.
-  * **Cosine Similarity** untuk mengukur tingkat kemiripan antar anime berdasarkan fitur kontennya.
-* **Kelebihan**: Tidak membutuhkan data pengguna lain, cocok untuk pengguna baru yang belum banyak memberi rating.
+  * Encoding fitur-fitur konten (seperti genre, tipe, rating) ke bentuk numerik.
+  * Menggunakan Cosine Similarity untuk mengukur tingkat kemiripan antar anime berdasarkan vektor fitur.
+  * Rekomendasi diberikan berdasarkan anime yang memiliki kemiripan tertinggi terhadap anime pilihan pengguna.
 
 #### Pendekatan 2: **Collaborative Filtering**
 
