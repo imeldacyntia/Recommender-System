@@ -100,28 +100,28 @@ Dari eksplorasi awal:
 
 Untuk memahami karakteristik data, dilakukan beberapa eksplorasi visual dan statistik dasar, antara lain:
 
-### Distribusi Genre:
+### 1. Distribusi Genre:
 
 Visualisasi genre menunjukkan bahwa **Comedy**, **Action**, dan **Romance** adalah genre yang paling umum. Sebagian besar judul anime memiliki lebih dari satu genre, sehingga fitur ini akan di-*split* dan *multi-hot encoded* dalam preprocessing.
 
-### Distribusi Rating:
+### 2. Distribusi Rating:
 
 Distribusi skor `rating` pada `anime.csv` menunjukkan bentuk lonceng, dengan puncak sekitar 6.5–7.5. Rating dari `rating.csv` memiliki distribusi mirip, namun juga mengandung `-1` yang akan dihapus karena tidak mewakili preferensi nyata.
 
-### Tipe Anime:
+### 3. Tipe Anime:
 
 Sebagian besar anime bertipe **TV series**, diikuti oleh **Movie** dan **OVA**. Ini memberi indikasi bahwa mayoritas rekomendasi akan berasal dari anime TV.
 
-### Jumlah Episode:
+### 4. Jumlah Episode:
 
 Terdapat outlier seperti episode = "Unknown" atau jumlah episode ekstrem (>1000) yang memerlukan penanganan. Distribusi jumlah episode menunjukkan bahwa sebagian besar anime memiliki 12–24 episode, konsisten dengan format musim tayang di Jepang.
 
-### Analisis Interaksi Pengguna:
+### 5. Analisis Interaksi Pengguna:
 
 * Banyak pengguna hanya memberi rating pada sedikit anime, sementara sebagian kecil pengguna sangat aktif (memberi rating ke ratusan judul).
 * Ini berpengaruh pada pendekatan collaborative filtering, di mana pengguna aktif menjadi basis penting dalam menemukan kesamaan minat.
 
-### Deteksi Outliner:
+### 6. Deteksi Outliner:
 Boxplot menunjukkan adanya outlier pada beberapa fitur:
 
 * Rating Anime: Umumnya berada di 6–8, namun ada outlier di bawah 4 dan di atas 9.
@@ -129,14 +129,50 @@ Boxplot menunjukkan adanya outlier pada beberapa fitur:
 * Jumlah Episode: Sebagian besar anime memiliki <100 episode, tapi ada outlier hingga >1000 episode.
 * Jumlah Rating per Pengguna: Mayoritas pengguna memberi sedikit rating, namun ada outlier dengan >3000 rating.
 
+## Data Preparation
+Dalam proses persiapan data, dilakukan delapan tahap utama sebagai berikut:
+
+1. **Pre-cleaning Rating Kosong (Rating = -1)**
+
+   * Menghapus semua entri rating dengan nilai -1 pada dataset rating untuk memastikan hanya data valid yang diproses.
+
+2. **Menangani Nilai yang Hilang (Missing Values)**
+
+   * Mengecek nilai yang hilang pada dataset asli.
+   * Melakukan imputasi pada kolom kategorikal seperti `genre` dan `type` dengan nilai modus (nilai paling sering muncul).
+   * Menghapus baris dengan nilai rating kosong (`NaN`) karena rating merupakan fitur penting untuk pemodelan.
+
+3. **Menghapus / Menyesuaikan Outlier**
+
+   * Menggunakan metode IQR (Interquartile Range) untuk mendeteksi dan menghapus outlier pada fitur numerik seperti `rating` dan `episodes`.
+   * Menangani nilai `episodes` yang tidak diketahui dengan menghapus baris dengan nilai ‘Unknown’ dan mengkonversi tipe data ke numerik.
+   * Menghapus outlier pada rating pengguna dan jumlah rating per pengguna untuk menghindari bias akibat data ekstrem.
+
+4. **Normalisasi / Standarisasi Fitur Numerik**
+
+   * Melakukan standarisasi (StandardScaler) pada fitur numerik seperti `rating` dan `episodes` agar memiliki skala yang sama dan mendukung algoritma machine learning.
+
+5. **Encoding Fitur Kategorikal**
+
+   * Mengubah fitur `genre` yang multi-label dari string menjadi list, kemudian menerapkan MultiLabelBinarizer untuk membuat fitur biner untuk setiap genre.
+   * Melakukan one-hot encoding pada fitur `type` untuk mengubah kategori menjadi fitur numerik yang dapat diproses model.
+
+6. **Feature Engineering**
+
+   * Membuat fitur baru `rating_per_episode` yang merupakan hasil pembagian rating dengan jumlah episode, sebagai indikator kualitas per episode.
+   * Menambahkan fitur `genre_count` yang menghitung jumlah genre yang melekat pada satu anime.
+   * Membuat fitur biner `type_TV_or_not` untuk menandai apakah anime bertipe TV atau bukan.
+
+7. **Pembentukan Dataset Final**
+
+   * Menyimpan nama anime pada dataset terpisah untuk keperluan tampilan hasil rekomendasi.
+   * Membuat salinan dataset final dengan menghapus kolom yang tidak relevan atau bersifat ID seperti `anime_id` dan `name`.
+   * Memastikan seluruh fitur penting termasuk hasil encoding dan fitur rekayasa sudah tercakup dalam dataset final.
+   * Menampilkan dimensi dataset dan beberapa contoh data sebagai verifikasi akhir.
+
+
 
 ############################################BATAS AM KERJOAKAN ########################################################
-## Data Preparation
-Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
-
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan proses data preparation yang dilakukan
-- Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
 
 ## Modeling
 Tahapan ini membahas mengenai model sisten rekomendasi yang Anda buat untuk menyelesaikan permasalahan. Sajikan top-N recommendation sebagai output.
