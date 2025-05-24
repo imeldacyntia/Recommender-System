@@ -23,13 +23,13 @@ Adomavicius, G., & Tuzhilin, A. (2020). Context-Aware Recommender Systems. AI Ma
 
 1. Bagaimana pengguna dapat menemukan anime yang sesuai dengan preferensi pribadi mereka di tengah ribuan pilihan judul yang tersedia di berbagai platform?
 
-2. Mengapa sistem rekomendasi umum atau daftar trending saat ini kurang efektif bagi pengguna yang memiliki preferensi khusus terhadap genre, tipe tayangan, atau rating tertentu?
+2. Mengapa sistem rekomendasi umum atau daftar trending saat ini kurang efektif bagi pengguna yang memiliki preferensi khusus terhadap genre dan tipe tayangan?
 
 3. Bagaimana cara menciptakan sistem rekomendasi yang tidak hanya mempertimbangkan karakteristik konten anime, tetapi juga perilaku pengguna lain untuk memberikan saran yang lebih personal dan relevan?
 
 ### Goals
 
-1. Membangun sistem rekomendasi anime berbasis Content-based Filtering yang mempertimbangkan genre, tipe tayangan, dan skor rating untuk membantu pengguna menemukan anime yang relevan dengan preferensi pribadi mereka.
+1. Membangun sistem rekomendasi anime berbasis Content-based Filtering yang mempertimbangkan genre dan tipe tayangan untuk membantu pengguna menemukan anime yang relevan dengan preferensi pribadi mereka.
 
 2. Meningkatkan personalisasi rekomendasi dengan pendekatan Collaborative Filtering yang memanfaatkan data interaksi dan rating pengguna lain yang memiliki pola kesukaan serupa.
 
@@ -49,7 +49,7 @@ Pengguna membutuhkan sistem rekomendasi yang mampu menyajikan saran anime yang *
 * **Teknik yang digunakan**:
 
   * Representasi teks pada fitur genre menggunakan teknik TF-IDF Vectorizer.
-  * Encoding fitur-fitur konten (seperti genre, tipe, rating) ke bentuk numerik.
+  * Encoding fitur-fitur konten (seperti genre dan tipe) ke bentuk numerik.
   * Perhitungan kemiripan antar anime menggunakan Cosine Similarity.
   * Rekomendasi diberikan berdasarkan anime yang memiliki kemiripan tertinggi terhadap anime pilihan pengguna.
 
